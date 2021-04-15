@@ -17,7 +17,10 @@ git clone +自己的網址https://github.com/Lidemy/mentor-program-5th-cmtilo.gi
 接著提交 `git commit -am`
 再推到遠端 `git push origin`
 
+注意事項：新的檔案一定要 git add {檔名} 才會加進去！!
 
 回到網頁PR
+
+
 
 從week1 合併進去 master
