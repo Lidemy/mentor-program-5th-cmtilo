@@ -27,6 +27,12 @@
 `git pull origin master`
 `git branch -d week1`
 
+如果尚未合併卻誤刪本機分支挽救方法為
+git branch <新建分支名稱> <版本號>
+說明：重新開一個新的分支接回去誤刪的分支版本號
+舉例：
+刪除成功時會出現Deleted branch week1 (was 57cf268)
+此時發現誤刪趕緊輸入 git branch new_week1 57cf28
+就把檔案都救回來了!
 
 
-從week1 合併進去 master
