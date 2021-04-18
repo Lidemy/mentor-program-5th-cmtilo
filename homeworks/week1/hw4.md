@@ -33,9 +33,17 @@
 commit前可以用git diff看有哪些修改
 
 ---
-###狀況劇：
+紀錄一下在這部分助教有提出一個問題：
+如果在比較上層的資料夾有改動怎麼辦？
+working directory: week21/hw1/src/
+modified: week21/hw1/index.html
+
+ANS 可用`git add . ` 加入所有檔案的改動
+
+---
+###補充狀況劇：
 ．如果2個branch 改到同個檔案同一行衝突時(conflict)：手動解決
-git branch - v 看有幾個branch名稱.版本號.目前在哪個branch
+git branch - v 看有幾個branch名稱.版本號.目前在哪個分支
 git branch <名稱> 新的分支
 git branch - d <名稱> 刪分支
 git checkout <名稱> 切換到某分支
