@@ -20,7 +20,8 @@
 再推到遠端 `git push origin week1`
 
 
-回到網頁PR，從week1 合併進去 master
+回到網頁PR，請求助教將這個 week1 合併進去 master
+
 
 再回到本機把分支刪掉
 `git checkout master`

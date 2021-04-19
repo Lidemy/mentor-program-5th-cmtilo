@@ -24,7 +24,8 @@
 ###開始版本控制步驟：
 1 git init 初始化,開始版本控制
 2 git status 查詢狀態
-3 .gitignore 忽略的檔案放進來,一般放使用者個人相關或作業系統檔,排除版本控制外,但.gitignore資料夾本身要加入版本控制
+3 .gitignore 忽略的檔案放進來,一般放使用者個人相關或作業系統檔,排除版本控制外,但.gitignore本身要加入版本控制
+（.gitignore是一個檔案可以想像成類似備忘錄）
 4 git add . 把所有檔案全加入版本控制,現在都是新檔案都還是untrack狀態,不能直接用-am
 5 git commit -am "__" 建立第一個commit版本,加入版本控制+新建版本同時,但不會加入新增的檔,所以有新增檔案還是要用 git add <檔名> ,或者用git add . 加入所有檔案
 6 git log 可以看全部版本的作者.修改時間.內容
@@ -38,7 +39,7 @@ commit前可以用git diff看有哪些修改
 working directory: week21/hw1/src/
 modified: week21/hw1/index.html
 
-ANS 可用`git add . ` 加入所有檔案的改動
+ANS 先`cd..`回到上一層資料夾之後可用`git add . ` 加入所有檔案的改動
 
 ---
 ###補充狀況劇：
