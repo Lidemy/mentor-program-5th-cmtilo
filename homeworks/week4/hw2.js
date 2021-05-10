@@ -30,11 +30,12 @@ function list() {
   request.get(
     `${APIUrl}?_limit=20`,
     (error, response, body) => {
-      const json = JSON.parse(body)
-      for (let i = 0; i < json.length; i++) {
-        console.log(`${json[i].id} ${json[i].name}`)
-      }
-      if (error) {
+      try {
+        const json = JSON.parse(body)
+        for (let i = 0; i < json.length; i++) {
+          console.log(`${json[i].id} ${json[i].name}`)
+        }
+      } catch (error) {
         console.log('error:', error)
       }
     }
@@ -45,9 +46,10 @@ function read(id) {
   request.get(
     `${APIUrl}/${id}`,
     (error, response, body) => {
-      const json = JSON.parse(body)
-      console.log(`${json.id} ${json.name}`)
-      if (error) {
+      try {
+        const json = JSON.parse(body)
+        console.log(`${json.id} ${json.name}`)
+      } catch (error) {
         console.log('error:', error)
       }
     }
@@ -58,8 +60,9 @@ function del(id) {
   request.delete(
     `${APIUrl}/${id}`,
     (error, response, body) => {
-      console.log('successfully deleted')
-      if (error) {
+      try {
+        console.log('successfully deleted')
+      } catch (error) {
         console.log('error:', error)
       }
     }
@@ -75,8 +78,9 @@ function create(name) {
       }
     },
     (error, response, body) => {
-      console.log(`${name} added successfully`)
-      if (error) {
+      try {
+        console.log(`${name} added successfully`)
+      } catch (error) {
         console.error('error:', error)
       }
     }
@@ -92,8 +96,9 @@ function update(id, name) {
       }
     },
     (error, response, body) => {
-      console.log(`${id} has been modified to ${name}`)
-      if (error) {
+      try {
+        console.log(`${id} has been modified to ${name}`)
+      } catch (error) {
         console.log('error:', error)
       }
     }
