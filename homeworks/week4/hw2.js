@@ -96,10 +96,10 @@ function update(id, name) {
       }
     },
     (error, response, body) => {
-      if (error) {
-        console.log('error:', error)
-      } else {
+      try {
         console.log(`${id} has been modified to ${name}`)
+      } catch (error) {
+        console.log('error:', error)
       }
     }
   )
