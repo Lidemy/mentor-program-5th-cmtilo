@@ -8,9 +8,7 @@ API就是我開個菜單給你，告訴你我這裡有什麼可以提供給你�
 ## 請找出三個課程沒教的 HTTP status code 並簡單介紹
 
 203 Non-Authoritative Information：非授權資訊。請求成功，但回應內容與200的回應內容不完全相同。
-
 414 Request URI Too Long：提交內容太多，請求的URI（統一資源標誌符）太長了。
-
 504 Gateway Timeout：連線逾時，未能即時收到所發請求的回應。
 
 
