@@ -21,23 +21,23 @@ API 名稱：Cmtilo Find Restaurant For You
 API 網址：https://cmtilo-find-restaurant-for-you.com.tw/{path}
 
 操作功能說明：
-| 功能           | Method | path                  | 參數       | 範例      |
-|---------------|------|-----------------|--------------|-------------|
-| 回傳所有資料 | GET  | / restaurants    | _limit:限制回傳數量| / restaurants?_limit=5 |
-| 回傳單一資料 | GET   | / restaurant/:id | 無         | / restaurant/10 |
-| 新增餐廳     | POST    | / restaurant        | name: 名稱 | 無  |
-| 刪除餐廳     | DELETE | / restaurant /:id | 無                 | 無  |
-| 更改餐廳     | PATCH  | / restaurant /:id | name: 名稱 | 無 |
+| 功能        | Method  | path             | 參數               | 範例           |
+|-------------|--------|-------------------|-------------------|----------------|
+| 回傳所有資料 | GET    | / restaurants     | _limit:限制回傳數量| / restaurants?_limit=5 |
+| 回傳單一資料 | GET    | / restaurant/:id  | 無                | / restaurant/10 |
+| 新增餐廳     | POST   | / restaurant      | name: 名稱        | 無              |
+| 刪除餐廳     | DELETE | / restaurant /:id | 無                | 無              |
+| 更改餐廳     | PATCH  | / restaurant /:id | name: 名稱        | 無              |
 
 欄位及型態說明：
-| 項次 | 參數名 | 型態 | 說明      |
-|-------|---------|--------|------------|
-| 1    | limit    | int   | 回傳數量  |
-| 2    | id      | string | 編號      |
-| 3    | name   | string | 餐廳名稱  |
-| 4    | type    | string | 餐點類型  |
-| 5    | price    | string | 價位等級  |
-| 6    | stars    | string | 評價星等  |
+| 項次 | 參數名 | 型態   | 說明      |
+|------|-------|--------|----------|
+| 1    | limit | int    | 回傳數量  |
+| 2    | id    | string | 編號      |
+| 3    | name  | string | 餐廳名稱  |
+| 4    | type  | string | 餐點類型  |
+| 5    | price | string | 價位等級  |
+| 6    | stars | string | 評價星等  |
 
 回傳格式：JSON
 回傳範例：
