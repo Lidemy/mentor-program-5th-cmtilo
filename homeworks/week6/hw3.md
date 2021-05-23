@@ -1,7 +1,7 @@
 ## 請找出三個課程裡面沒提到的 HTML 標籤並一一說明作用。
 #### <sup>和<sub>
 <sup>上標用來標註上方的文字，比如 1st 的 st ，1<sup>st</sup>。
-<sub>下標用來標註下方的文字，比如 CO2 的 2，CO<sup>2</sup>。
+<sub>下標用來標註下方的文字，比如 CO2 的 2，CO<sub>2</sub>。
 #### <fieldset>和<legend>
 <fieldset>先將表單群組起來，<legend>放在<fieldset>後面作為標題。
 #### <figure>和<figcaption>
