@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>活動報名表單</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      * {
+        font-family: '微軟正黑體';
+      }
+      html, body {
+        width: 100%;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #ddd;
+        flex-direction: column;
+      }
+      .form_wrapper {
+        width: 645px;
+        margin: 100px 0px;
+        box-shadow: 1.8px 2.4px 5px 0 rgba(0, 0, 0, 0.3);
+        background-color: white;
+        border-top: solid #fad312 8px;
+      }
+      .form {
+        padding: 42px;
+      }
+      .form h1 {
+        font-size: 36px;
+        margin: 15px 0px;
+      }
+      .form p {
+        font-size: 14px;
+        margin: 5px 0px;
+      }
+      .notice {
+        color: #e74149;
+        margin: 15px 0px;
+        margin-bottom: 40px;
+        font-size: 16px;
+        font-weight: bold;
+      }
+      .input_block {
+        padding: 20px 0px;
+      }
+      .item ,.item_other {
+        font-size: 20px; 
+      }
+
+      .item::after {
+        color: #e74149;
+        content: ' *';
+      }
+      .input_block input {
+        width: 287px;
+        height: 23px;
+        border: solid 1px #d0d0d0;
+        margin: 18px 0px;
+        color: #afafaf;
+      }
+      .checkbox {
+        margin: 20px 0px;
+      }
+
+      .checkbox label {
+        font-size: 14px;  
+      }
+      .checkbox label input {
+        width: 20px;
+        height: 12px;
+        font-size: 14px;
+        margin: 12px 0px;
+      }
+
+      .button {
+        width: 50px;
+        margin: 20px 0px;
+        padding: 13px 31px;
+        border-radius: 3px;
+        background-color: #fad312;
+        font-size: 16px;
+        text-align: center;
+      }
+      .item_other_advice {
+        margin-top: 10px;
+      }
+
+      footer { 
+        width: 100%;
+        padding: 15px;
+        border-top: solid 3px #fad312;
+        font-size: 13px;
+        color: #999999;
+        background-color: #000000;
+        text-align: center;
+      }
+
+      @media(max-width: 768px)  {
+        
+        html, body {
+          width: 100%;
+          margin: 0;
+          padding: 0;
+        }
+        .form_wrapper {
+          width: 100%;
+          margin: 0px;
+        }
+        .input_block input {
+          width: 200px;
+        }
+        footer { 
+          width: 100%;
+          margin:0;
+          padding: 15px 0px;;
+        }
+      }
+        
+    </style>
+  </head>
+  <body>
+    <div class='form_wrapper'>
+      <form class='form'>
+        <h1>新拖延運動報名表單</h1>
+        <p>活動日期：2020/12/10 ~ 2020/12/11</p>
+        <p>活動地點：台北市大安區新生南路二段1號</p>
+        <div class='notice'>*必填</div>
+        <div class='input_block'>
+          <div class='item'>暱稱</div>       
+          <input name='nickname' type='text' value='您的回答'/>          
+        </div>
+        <div class='input_block'>
+           <div class='item'>電子郵件</div>
+           <input name='email' type='text' value='您的電子郵件'/>
+        </div>
+        <div class='input_block'>
+          <div class='item'>手機號碼</div>
+          <input name='phone' type='text' value='您的手機號碼'/>
+        </div>
+        <div class='input_block'>
+          <div class='item'>報名類型</div>
+          <div class='checkbox'>
+            <label>
+              <input name='type' value='1' type='radio' />躺在床上用想像力實作
+            </label>
+            <br/>
+            <label>
+              <input name='type' value='2' type='radio' />趴在地上滑手機找現成的
+            </label>
+          </div>
+        </div>
+        <div class='input_block'>
+          <div class='item'>怎麼知道這個活動的？</div>
+          <input name='information' type='text' value='您的回答'/>
+        </div>
+        <div class='input_block'>
+          <div class='item_other'>其他</div>
+          <div class='item_other_advice'>對活動的一些建議</div>
+          <div>
+            <input name='suggest' type='text' value='您的回答'/>
+          </div>
+        </div>
+        <div class='button'>提交</div>
+        <p>請勿透過表單送出您的密碼。</p>
+      </form>
+    </div>
+    <footer>
+      © 2020 © Copyright. All rights Reserved.
+    </footer>
+  </body>
+</html>
