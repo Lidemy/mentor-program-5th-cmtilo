@@ -1,0 +1,79 @@
+* {
+  position: relative;
+  font-family: sans-serif, '微軟正黑體';
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #d7e1ee;
+}
+
+#list {  
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #eee;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  background-color: rgb(31, 59, 136);
+  color: #f2f2f2;
+}
+
+.item {
+  padding: 5px;
+  list-style: none;
+  margin-top: 10px;
+  font-size: 20px;
+}
+.item_todo {
+  padding: 5px;
+  list-style: none;
+  margin-top: 10px;
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.things_check{
+  width: 18px;
+  height: 18px;
+}
+.item input {
+  width: 200px;
+  border: dotted 1px #331a00;
+  font-size: 18px;
+  padding: 5px;
+  border: inset;
+}
+.item .addbtn {
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 10px;
+  padding: 5px;  
+}
+.item .addbtn:hover {
+  background-color: #585850;
+  color: white;
+}
+
+.del_btn {
+  border-radius: 4px;  
+  padding: 0px 6px;  
+  cursor: pointer;
+}
+.del_btn:hover {
+  background-color: #585850;
+  color: white;
+}
+
+.done {
+  text-decoration: line-through;
+}
