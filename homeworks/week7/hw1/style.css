@@ -1,0 +1,117 @@
+  * {
+    font-family: '微軟正黑體';
+  }
+  html, body {
+    width: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ddd;
+    flex-direction: column;
+  }
+  .form_wrapper {
+    width: 645px;
+    margin: 100px 0px;
+    box-shadow: 1.8px 2.4px 5px 0 rgba(0, 0, 0, 0.3);
+    background-color: white;
+    border-top: solid #fad312 8px;
+  }
+  .form {
+    padding: 42px;
+  }
+  .form h1 {
+    font-size: 36px;
+    margin: 15px 0px;
+  }
+  .form p {
+    font-size: 14px;
+    margin: 5px 0px;
+  }
+  .notice {
+    color: #e74149;
+    margin: 15px 0px;
+    margin-bottom: 40px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  .input_block {
+    padding: 20px 0px;
+  }
+  .item ,.item_other {
+    font-size: 20px; 
+  }
+
+  .item::after {
+    color: #e74149;
+    content: ' *';
+  }
+
+
+  .item_require_alert::after {
+    color: #e74149;
+    content: '尚未填寫';
+  }
+
+  .input_block input {
+    width: 287px;
+    height: 23px;
+    border: solid 1px #d0d0d0;
+    margin: 18px 0px;
+  }
+ 
+  .checkbox label {
+    font-size: 14px;  
+  }
+  .checkbox label input {
+    width: 20px;
+    height: 12px;
+    font-size: 14px;
+    margin: 12px 0px;
+  }
+
+  .button {
+    width: 100px;
+    margin: 20px 0px;
+    padding: 13px 31px;
+    border-style: none;
+    border-radius: 3px;
+    background-color: #fad312;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+  }
+  .item_other_advice {
+    margin-top: 10px;
+  }
+
+  footer { 
+    width: 100%;
+    padding: 15px;
+    border-top: solid 3px #fad312;
+    font-size: 13px;
+    color: #999999;
+    background-color: #000000;
+    text-align: center;
+  }
+
+  @media(max-width: 768px)  {    
+    html, body {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    .form_wrapper {
+      width: 100%;
+      margin: 0px;
+    }
+    .input_block input {
+      width: 200px;
+    }
+    footer { 
+      width: 100%;
+      margin:0;
+      padding: 15px 0px;;
+    }
+  }
+    
