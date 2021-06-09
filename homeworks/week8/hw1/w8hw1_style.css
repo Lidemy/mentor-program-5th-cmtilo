@@ -1,0 +1,216 @@
+* {
+  font-family: Questrial, '微軟正黑體';
+}    
+
+html,body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.navbar {
+  box-shadow: -1.4px -1.4px 6px 0 #97a2a0;
+  padding: 0 20px
+}
+
+.navbar .wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height:84px;
+  background: white;    
+}
+.navbar_siteName {
+  color:#489846;
+  font-size: 36px;
+}
+.navbar_list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  font-size: 18px;
+}
+.navbar_list li {
+  margin-left: 12px;
+  border-radius: 8px;
+  transition: 0.5s;
+}
+.navbar_list li.active,
+.navbar_list li:hover {
+  background: #ff7286;
+}
+.navbar_list li.active a,
+.navbar_list li:hover a {
+  color: white;
+}
+.navbar_list li a {
+  display: block;
+  text-decoration: none;
+  color: black;
+  padding: 12px 24px;
+}
+
+.wrapper {
+  max-width:1280px;
+  margin: 0 auto;
+}
+
+section {
+  text-align: center;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+#lottery {
+  position: relative;
+  height: 120%;
+  background: url(bg.jpg) center/cover no-repeat;
+  text-align: center; 
+}
+.lottery_info {
+  max-width: 500px;
+  height: auto;
+  padding: 20px;
+  border-radius: 16px;
+  background-color: white;
+  //display: none;
+}
+
+.hide {
+  display: none;
+}
+
+.prize_des {  
+  font-size: 30px;
+  font-weight: 700;
+  padding: 20px;
+  color: white;
+  text-shadow: 0.1em 0.1em 0.2em #666;
+}
+
+.info_title {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin: 10px;;
+  color: #5ec1b6;
+}
+.info_des {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px 0px;
+  border-bottom: solid 1px #cdcdcd;
+}
+.info_des_item {
+  width: 100px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: left;
+  color: #322929;
+}
+.info_des_content {
+  width: 360px;
+  font-size: 16px;
+  line-height: 1.63;
+  text-align: left;
+  color: #322929;
+}
+
+.btn_lottery:hover {
+  transform: scale(1.1);
+}
+.btn_lottery {
+  letter-spacing: 0.32px;
+  width: 350px;  
+  margin: 30px auto;
+  padding: 18px 0px;
+  border-radius: 8px; 
+  background-color: #e62a45;
+  cursor: pointer;
+  transition: transform 0.5s;
+  color: white;
+  font-weight: 700;
+}
+
+.footer_top {
+  padding: 30px 50px;
+  background-color: #e8efee;
+}
+.footer_top .wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer_top p {
+  font-size: 14px;
+  color: #484848;
+}
+.footer_top_info {
+  margin: 16px;
+  font-size: 14px;  
+}
+.footer_site {
+  text-align: right;
+}
+
+.footer_bottom {
+  font-size: 16px;
+  text-align: center;
+  color: white;
+  padding: 15px ;
+  background-color: #35564b;
+}
+
+@media(max-width: 768px) {
+  .navbar .wrapper {
+    height: 130px;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0px;
+  }
+  .navbar_siteName {
+    margin-top: 10px;
+  }
+  .navbar_list {
+    display: flex;
+  }
+  .navbar_list li {
+    flex: 1;
+    margin-left: 10px;
+    border-radius: 0;
+    text-align: center;        
+  }
+  .navbar_list li a {
+    padding: 10px;
+  }
+  .lottery_info {
+    max-width: 360px;
+  }
+
+  .info_des {
+    display: flex;
+    flex-direction: column;
+  }
+  .info_des_item {
+    width: 100%;
+  }
+  .info_des_content {
+    width: 100%;
+  }
+
+  .btn_lottery {
+    margin: 20px 0;
+    padding: 18px 0;
+  }
+
+  .footer_top .wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+}
+
