@@ -348,4 +348,14 @@ td {
   .games_window {
     display: none;
   }
+  .text_area_window, 
+  .text_area_window_name, 
+  .message_window{
+    width: auto;
+  }
+  th, td {
+    width: auto;
+    padding: 0;
+  }
+
 }

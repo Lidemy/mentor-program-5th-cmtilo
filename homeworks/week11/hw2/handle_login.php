@@ -22,7 +22,7 @@
   }
 
   $result = $stmt->get_result();
-
+  $row = $result->fetch_assoc();
   if ($result !== false && $result->num_rows == 0) {
     header ('Location: login.php?errCode=2');
     die();
@@ -31,8 +31,7 @@
     header ('Location: login.php?errCode=2');
     die()
   }
-  if ($result !== false && $result->num_rows > 0) {
-    $row = $result->fetch_assoc();
+  if ($result !== false && $result->num_rows > 0) {    
     if(password_verify($password, $row['password'])) {
       $_SESSION['username'] = $username;
       header ('Location: index.php');

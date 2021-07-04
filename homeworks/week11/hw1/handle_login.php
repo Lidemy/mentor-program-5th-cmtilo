@@ -23,8 +23,10 @@
   }
   /*執行成功*/
   $result = $stmt->get_result();
+  $row = $result->fetch_assoc();
   /*處理錯誤2-帳號或密碼輸入錯誤*/
   if ($result !== false && $result->num_rows == 0) {
+    echo 123;
     header ('Location: login.php?errCode=2');
     die($conn->error);
   }
@@ -32,8 +34,7 @@
     header ('Location: login.php?errCode=2');
     die($conn->error);
   }   
-  if ($result !== false && $result->num_rows > 0) {
-    $row = $result->fetch_assoc();
+  if ($result !== false && $result->num_rows > 0) {    
     if(password_verify($password, $row['password'])) {
       $_SESSION['username'] = $username;
       header ('Location: index.php');//正確登入成功回主頁
