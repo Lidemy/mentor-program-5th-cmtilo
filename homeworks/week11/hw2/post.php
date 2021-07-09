@@ -2,23 +2,32 @@
   session_start();
   require_once('conn.php');
   require_once('utils.php');
+  
   $id = $_GET['id'];
   $username = NULL;
   $user = NULL;
   if (!empty($_SESSION['username'])) {
-    $username = $_SESSION['username'];    
-    $user = getUserFromUsername($username);
+    $username = $_SESSION['username'];
+    $user = getUserRole($username);
+  }
+  // 如 id 為空導回首頁
+  if (empty($id)) {
+    header('Location: index.php');
+    exit();
   }
 
-  $sql = 'SELECT * FROM cmtilo_blog_posts WHERE id = '. $id;
+  $sql = 'SELECT * FROM cmtilo_blog_posts WHERE id = ? AND is_deleted = 0';
   $stmt = $conn->prepare($sql);
+  $stmt->bind_param('i', $id);
   $result = $stmt->execute();
+  // 如執行未果，導回首頁顯示錯誤訊息3
   if (!$result) {
-    die('Error:'.$conn->error);
+    echo $conn->error;
+    header('Location: index.php?errCode=3');
+    die($conn->error);
   }
   $result = $stmt->get_result();
-  $row = $result->fetch_assoc();
-  
+  $row = $result->fetch_assoc();  
 ?>
 
 <!DOCTYPE html>
@@ -44,7 +53,7 @@
         <div class="post__header">
           <div><?php echo escape($row['title']); ?></div>
           <div class="post__actions">
-            <?php if (!empty($_SESSION['username'])) { ?>
+            <?php if ($user === 'admin') { ?>
               <a class="post__action" href="edit_post.php?id=<?php echo escape($row['id']); ?>">編輯</a>
             <?php } ?>
           </div>

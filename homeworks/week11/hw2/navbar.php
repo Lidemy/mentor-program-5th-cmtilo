@@ -1,12 +1,13 @@
 <?php
-
   require_once('conn.php');
+  require_once('utils.php');
+
   $username = NULL;
   $user = NULL;
   if (!empty($_SESSION['username'])) {
     $username = $_SESSION['username'];
+    $user = getUserRole($username);
   }
-
 ?>
 
 <link rel="stylesheet" href="style.css" />
@@ -22,9 +23,10 @@
           <li><a href="#">關於我</a></li>
         </div>
         <div>
-          <?php if (!$username) { ?>
+          <!--部落格身分權限為 admin 藉此與留言板權限區分-->
+          <?php if ($user !== 'admin') { ?>
             <li><a href="login.php">登入</a></li>
-          <?php } else { ?>
+          <?php } else { ?>            
             <li><a href="new_post.php">新增文章</a></li>
             <li><a href="admin.php">管理後台</a></li>
             <li><a href="logout.php">登出</a></li>

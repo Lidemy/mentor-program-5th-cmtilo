@@ -2,6 +2,7 @@
   session_start();
   require_once('conn.php');
   require_once('utils.php');
+  require_once('check_role.php'); // 檢查權限
 ?>
 
 <!DOCTYPE html>
@@ -32,7 +33,7 @@
             <input class="edit-post__input" placeholder="請輸入文章標題" name="title" required/>
           </div>
           <div class="edit-post__input-wrapper">
-            <textarea rows="20" class="edit-post__content" name="post" ></textarea>
+            <textarea rows="20" class="edit-post__content" name="post"></textarea>
           </div>
           <div class="edit-post__input-wrapper">
             <input class="edit-post__input" placeholder="請輸入文章分類" name="categories" />

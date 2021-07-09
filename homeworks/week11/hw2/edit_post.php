@@ -2,12 +2,15 @@
   session_start();
   require_once('conn.php');
   require_once('utils.php');
+  require_once('check_role.php'); // 檢查權限
+
   $id = $_GET['id'];
-  $username = NULL;
-  $user = NULL;
-  if (!empty($_SESSION['username'])) {
-    $username = $_SESSION['username'];    
-    $user = getUserFromUsername($username);
+  $username = $_SESSION['username'];
+
+  // 檢查如 id 為空導回首頁並顯示錯誤訊息3
+  if (empty($id)) {
+    header('Location: index.php?errCode=3');
+    exit();
   }
 
   $sql = 'SELECT * FROM cmtilo_blog_posts WHERE is_deleted = 0 AND id = ' . $id;
@@ -21,11 +24,9 @@
 ?>
 
 <!DOCTYPE html>
-
 <html>
 <head>
   <meta charset="utf-8">
-
   <title>部落格</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="normalize.css" />
@@ -65,7 +66,9 @@
                 $msg = 'Error';
                 if ($code === '1') {
                   $msg = '標題不可為空白';
-                } 
+                } else if ($code === '2') {
+                  $msg = '錯誤！請稍後再試';
+                }
                 echo '<br/><div class="err_msg">'.$msg.'</div>';
               }
             ?>

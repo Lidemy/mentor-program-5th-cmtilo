@@ -2,22 +2,27 @@
   session_start();
   require_once('conn.php');
   require_once('utils.php');
+  require_once('permission.php');//檢查權限，如session為空則導回首頁
 
-  $id = escape($_GET['id']);
-  $username = NULL;
-  $user = NULL;
-
-  if(!empty($_SESSION['username'])) {
-    $username = $_SESSION['username'];
-    $user = getUserFromUsername($username);
-    $role = getUserRole($username);
+  $id = $_GET['id'];
+  $username = $_SESSION['username'];
+  
+  //如 id 為空，導回首頁並顯示錯誤訊息2
+  if(empty($id)) {
+    header('Location: index.php?errCode=2');
+    die();
   }
+
   $sql = 'SELECT * FROM cmtilo_comments WHERE id = ?';
   $stmt = $conn->prepare($sql);
   $stmt->bind_param('i', $id);
   $result = $stmt->execute();
-  if (!$result) {
-    die('Error:' . $conn->error);
+
+  //如執行未果，導回首頁顯示錯誤訊息2
+  if(!$result) {
+    echo $conn->error;
+    header('Location: index.php?errCode=2');
+    die($conn->error);
   }
 
   $result = $stmt->get_result();

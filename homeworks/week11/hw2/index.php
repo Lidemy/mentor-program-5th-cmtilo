@@ -2,10 +2,16 @@
   session_start();
   require_once('conn.php');
   require_once('utils.php');
+
   $username = NULL;
   $user = NULL;
   if (!empty($_SESSION['username'])) {
     $username = $_SESSION['username'];
+    $user = getUserRole($username);
+    if ($user !== 'admin') {
+      session_destroy(); // 如果使用者從留言板來，先幫他摧毀session
+      header('Location: index.php');
+    }
   }
 
   $sql = 'SELECT * FROM cmtilo_blog_posts WHERE is_deleted = 0 ORDER BY id DESC';
@@ -15,6 +21,7 @@
     die('Error:'.$conn->error);
   }
   $stmt->store_result();
+
   // 分頁功能
   $per = 5; //每頁顯示5篇  
   $total_posts = $stmt->num_rows(); //總篇數  
@@ -32,7 +39,6 @@
   $result = $stmt->get_result();
 ?>
 
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -43,7 +49,6 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  
   <?php include_once("navbar.php"); ?>
   <section class="banner">
     <div class="banner__wrapper">
@@ -51,7 +56,16 @@
       <div>Welcome to my blog</div>
     </div>
   </section>
-
+  <?php
+    if (!empty($_GET['errCode'])) {
+      $code = $_GET['errCode'];
+      $msg = 'Error';
+      if ($code === '3') {
+        $msg = '不明錯誤！請稍後再試';
+      }
+      echo '<br/><div class="err_msg">'.$msg.'</div>';
+    }
+  ?>
   <div class="container-wrapper">
     <div class="posts">
       <?php while ($row = $result->fetch_assoc()) { ?>
@@ -59,8 +73,8 @@
         <div class="post__header">
           <div><?php echo escape($row['title']); ?></div>
           <div class="post__actions">
-            <?php if (!empty($_SESSION['username'])) { ?>
-            <a class="post__action" href="edit_post.php?id=<?php echo escape($row['id']); ?>">編輯</a>
+            <?php if ($user === 'admin') { ?>
+              <a class="post__action" href="edit_post.php?id=<?php echo escape($row['id']); ?>">編輯</a>
             <?php } ?>
           </div>
         </div>

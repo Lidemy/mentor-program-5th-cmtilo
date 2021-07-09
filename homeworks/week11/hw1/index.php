@@ -5,6 +5,7 @@
 
   $username = NULL;
   $user = NULL;
+  $role = NULL;
   if (!empty($_SESSION['username'])) {
     $username = $_SESSION['username'];    
     $user = getUserFromUsername($username);
@@ -93,7 +94,7 @@
           <div><img src='img/logout.png'/></div>
           <div class='icon_word'>Logout</div>
         </a>
-        <?php if ($role === '1') { ?>
+        <?php if ($role === 1) { ?>
           <br/>
           <a class='icon_box' href='back.php'>
             <div><img src='img/back.png'/></div>
@@ -131,7 +132,9 @@
           $msg = 'Error';
           if ($code === '1') {
             $msg = $msg.'Required field cannot be blank.';
-          } 
+          } else if ($code === '2') {
+            $msg = $msg.'Something went wrong, please try again.';
+          }
           echo '<div class="err_msg">'.$msg.'</div>';
         }
       ?>      
@@ -139,7 +142,7 @@
         <div class='submit_btn'>
           Please Login
         </div>
-      <?php } else if ($role === '3') { ?>
+      <?php } else if ($role === 3) { ?>
         <div class='submit_btn'>
           You have been suspended
         </div>
@@ -156,7 +159,7 @@
         <div class='tiny_cube'>▼</div>
         <div class='tiny_cube'>▲</div>
       </div>
-      <?php if(escape($row['username']) === $username || $role === '1') { ?>
+      <?php if($row['username'] === $username || $role === 1) { ?>
       <div class='window_functionlist'>
         <a class='functionlist' href="update_comment.php?id=<?php echo $row['id'] ?>"><span>E</span>dit</a>
         <a class='functionlist' href="delete_comment.php?id=<?php echo $row['id'] ?>"><span>D</span>elete</a>
@@ -194,9 +197,9 @@
 
   <footer>Copyright © 2021 cmtilo. All rights reserved.</footer>
   <script>
-    var btn = document.querySelector('.update_nickname')
+    const btn = document.querySelector('.update_nickname')
     btn.addEventListener('click', function() {
-      var form = document.querySelector('.changing_window')
+      const form = document.querySelector('.changing_window')
       form.classList.toggle('hide')
     })
   </script>
