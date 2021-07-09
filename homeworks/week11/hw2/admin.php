@@ -2,9 +2,14 @@
   session_start();
   require_once('conn.php');
   require_once('utils.php');
-  require_once('check_role.php'); // 檢查權限
 
-  $username = $_SESSION['username'];
+  $username = NULL;
+  $user = NULL;
+  if (!empty($_SESSION['username'])) {
+    $username = $_SESSION['username'];
+    $user = getUserRole($username);
+  }
+  
   $sql = 'SELECT * FROM cmtilo_blog_posts WHERE is_deleted = 0 ORDER BY id DESC';
   $stmt = $conn->prepare($sql);
   $result = $stmt->execute();
