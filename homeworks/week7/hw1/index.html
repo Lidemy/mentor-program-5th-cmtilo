@@ -14,40 +14,46 @@
         <p>活動日期：2020/12/10 ~ 2020/12/11</p>
         <p>活動地點：台北市大安區新生南路二段1號</p>
         <div class='notice'>*必填</div>
-        <div class='input_block require'>
+        <div class='input_block'>
           <div class='item'>暱稱</div>       
-          <input name='nickname' type='text' placeholder='您的回答'/>          
+          <input class='require' name='nickname' type='text' placeholder='您的回答'/>
+          <div class='alert hide'>尚未填寫</div>       
         </div>
-        <div class='input_block require'>
+        <div class='input_block'>
            <div class='item'>電子郵件</div>
-           <input name='email' type='text' placeholder='您的電子郵件'/>
+           <input class='require' name='email' type='text' placeholder='您的電子郵件'/>
+           <div class='alert hide'>尚未填寫</div> 
         </div>
-        <div class='input_block require'>
+        <div class='input_block'>
           <div class='item'>手機號碼</div>
-          <input name='phone' type='text' placeholder='您的手機號碼'/>
+          <input class='require' name='phone' type='text' placeholder='您的手機號碼'/>
+          <div class='alert hide'>尚未填寫</div> 
         </div>
-        <div class='input_block require'>
+        <div class='input_block'>
           <div class='item'>報名類型</div>
           <div class='checkbox'>
             <label>
-              <input name='type' value='1' type='radio' />躺在床上用想像力實作
+              <input name='type' value='躺在床上用想像力實作' type='radio' />躺在床上用想像力實作
             </label>
             <br/>
             <label>
-              <input name='type' value='2' type='radio' />趴在地上滑手機找現成的
+              <input name='type' value='趴在地上滑手機找現成的' type='radio' />趴在地上滑手機找現成的
             </label>
           </div>
+          <div class='radio alert hide'>尚未填寫</div>  
         </div>
-        <div class='input_block require'>
+        <div class='input_block'>
           <div class='item'>怎麼知道這個活動的？</div>
-          <input name='information' type='text' placeholder='您的回答'/>
+          <input class='require' name='information' type='text' placeholder='您的回答'/>
+          <div class='alert hide'>尚未填寫</div>  
         </div>
         <div class='input_block'>
           <div class='item_other'>其他</div>
-          <div class='item_other_advice'>對活動的一些建議</div>
+          <div class='item_other_advice'>對活動的一些建議</div>          
           <div>
             <input name='suggest' type='text' placeholder='您的回答'/>
           </div>
+          <div class='notice'></div>
         </div>
         <input type='submit' class='button' value='提交'></input>
         <p>請勿透過表單送出您的密碼。</p>
@@ -56,6 +62,6 @@
     <footer>
       © 2020 © Copyright. All rights Reserved.
     </footer>
-    <script type='text/javascript' src='w7hw1.js'></script>
+    <script type='text/javascript' src='javascript.js'></script>
   </body>
 </html>
