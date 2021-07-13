@@ -1,0 +1,361 @@
+@font-face {
+  font-family: w95;
+  src: url('font/w95fa.otf'),
+      url('font/w95fa.woff');
+  font-weight: bold;
+}
+
+* {
+  font-family: w95, '細明體';
+}
+
+html, body, div {
+  padding: 0;
+  margin: 0;  
+}
+body {
+  border: double 6px black;
+  background: #FFFFEF;
+}
+
+h1 {
+  font-size: 24px;
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+span {
+  text-decoration: underline;
+}
+
+footer {
+  text-align: center;
+  margin-top: 100px;
+}
+/*大視窗*/
+.outer_window_functionlist {
+  display: flex;
+  padding: 2px 8px;
+  border-bottom: solid 2px black;
+  background: #FFF;
+}
+.outer_functionlist {
+  padding: 2px 8px;
+  font-size: 18px;
+}
+
+/*大視窗Main*/
+.windows {
+  position: relative;
+  border: double 6px black;
+  width: 960px;
+  margin: 10px auto;
+  background: #FFF;
+  min-height: 460px;
+}
+/*大視窗bar*/
+.outer_window {
+  display: flex;
+  font-size: 20px;
+  border-bottom: solid 2px black;
+  background: #FFF;
+}
+.little_cube {
+  font-family: STCaiyun;
+  border-style:solid;
+  border-color:white black;
+  width: 30px;
+  min-width: 30px;
+  text-align: center;
+  background-color: #C0C0C0;
+}
+/*只是背景遊戲視窗*/
+.games_window {
+  border: double 4px black;
+  width: 480px;
+  position: absolute;
+  top : 30%;
+  right: 10%;
+  padding: 0.1rem;
+  background-color: white;
+}
+.games_window_bar {
+  display: flex;
+  font-size: 18px;
+}
+.games_window_name {
+  width: 100%;
+  text-align: center;
+  border-bottom: solid 1px black;
+}
+.games_window_content{
+  height: 280px;
+}
+
+/*左方警告視窗*/
+.warning_window {
+  border: solid 3.5px #290084;
+  width: 280px;
+  position: absolute;
+  top : 200px;
+  left: -105px;
+  padding: 0.1rem;
+  background-color: white;
+  text-align:left;
+}
+.window_bar {
+  display: flex;
+  font-size: 18px;
+}
+.warning_window_name {
+  width: 100%;
+  text-align: center;
+  background-color: #290084;
+  color: white;
+}
+.warning_content {
+  padding: 10px 20px;
+  line-height: 1.5rem;
+}
+/*右方icon區*/
+.icon_box img{
+  width: 45px;
+  height: 45px;
+  box-shadow: 3px 3px;
+  border: solid 1.5px black;
+  background-color: #C0C0C0;
+}
+.icon_box{
+  text-align: center;
+  padding: 10px 25px;
+}
+.icon_word {
+  margin-top: 5px;
+  width: 50px;
+  text-align: center;
+}
+.icon_box:hover {
+  color: white;
+  background-color: black;
+  cursor: pointer;
+}
+.icons {
+  width: 220px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  position: absolute;
+  top : 60px;
+  right: 13px;
+}
+
+/*改暱稱*/
+.change_nickname, .change_role {
+  margin: 20px;
+}
+.changing_window {
+  border: solid 3.5px #290084;
+  width: 280px;
+  position: absolute;
+  top : 180px;
+  right: 10px;
+  padding: 0.1rem;
+  background-color: white;
+  text-align: center;
+}
+
+/*視窗小方格*/
+.tiny_cube {
+  font-family: STCaiyun;
+  border: solid 1.5px black;
+  width: 26px;
+  min-width: 26px;
+  height: 22px;
+  min-height: 22px;
+  text-align: center;
+  
+}
+/*輸入區域視窗*/
+.text_area_window{
+  border: solid 3.5px #290084;
+  width: 400px;
+  margin: 40px auto;
+  padding: 0.1rem;
+}
+.text_area_window_name {
+  width: 400px;
+  height: 24px;
+  text-align: center;
+  background-color: #290084;
+  color: white;
+  font-size: 18px;
+}
+.text_area {
+  width: 99%;
+  margin: 5px 0;
+  border: solid 1.5px black;
+}
+textarea {
+  width: 100%;
+  height: 100%; 
+  box-sizing: border-box;
+  border: inset 3px;
+  font-size: 18px;
+  font-family: consolas;
+}
+.submit_btn input {  
+  background-color: #C0C0C0;
+  font-size: 16px;
+
+}
+.submit_btn {
+  text-align: center;
+  margin: 8px 0px;  
+}
+.submit_btn input:hover {
+  cursor: pointer;
+}
+
+/*底下顯示留言視窗*/
+.message_window {
+  border: double 4px black;
+  width: 400px;  
+  margin: 15px auto;  
+}
+.window_bar {
+  font-size: 18px;
+}
+.window_name {
+  font-size: 20px;  
+  width: 100%;
+  text-align: center;
+  border-bottom: solid 1px black;
+}
+.window_functionlist {
+  display: flex;
+  border-bottom: solid 1px black;
+}
+.functionlist {
+  padding: 2px 8px;
+}
+.functionlist:hover {
+  background: black;
+  color: white;
+  cursor: pointer;
+}
+.massage_content {
+  padding: 30px 20px;
+  line-height: 1.5rem;
+  word-break: break-word;
+  white-space:pre-line;
+  font-family: consolas;
+}
+
+.window_ststus_bar {
+  display: flex;
+  justify-content: space-between;
+  border-top: solid 1px black;
+}
+.ststus {
+  padding: 0 8px;
+  width: 44%;
+  border: inset 1px;
+  font-size: 10px;
+  margin: 2px;
+}
+.pages {
+  text-align: center;
+}
+
+.hide {
+  display: none;
+}
+
+/*註冊登入*/
+.active {
+  color: white;
+  background-color: black;
+  cursor: pointer;
+}
+.register_info input {
+  width: 60%;
+  height: 22px; 
+  margin: 15px 20px;  
+  border: solid 1.5px black;
+}
+.register_info {
+  padding: 15px 20px;
+  font-size: 20px;
+  text-align: right;
+}
+
+.err_msg {
+  margin-top: 20px;
+  text-align: center;
+  color:brown;
+}
+
+/*後台表單*/
+table {
+  font-size: 20px;
+  margin: 150px auto;
+  border: solid 2px black;
+  border-collapse: collapse;
+}
+tr {
+  text-align: center;  
+}
+th {
+  padding: 20px;
+  width: 120px;
+  height: 20px;
+  background-color: #C0C0C0;
+  border: solid 2px black;
+}
+td {
+  padding: 10px;
+  width: 120px;
+  height: 30px;
+  border: solid 2px black;  
+}
+
+.modify {
+  width: 400px;
+}
+
+@media (max-width: 768px) {
+  .windows {
+    position: static;
+    width: auto;
+    margin: 10px auto;
+  }
+  .warning_window {
+    margin: 5px auto;
+    position: static;
+  }
+  .icons {
+    margin: 5px auto;
+    flex-wrap: nowrap;  
+    position: static;
+    justify-content: center;
+  }
+  .games_window {
+    display: none;
+  }
+  .text_area_window, 
+  .text_area_window_name, 
+  .message_window{
+    width: auto;
+  }
+  th, td {
+    width: auto;
+    padding: 0;
+  }
+
+}
