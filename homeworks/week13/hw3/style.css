@@ -1,0 +1,148 @@
+* {
+  font-family: '微軟正黑體';
+}
+html,body {
+  height: 100%;
+  width: 100%;
+  margin: 0
+}
+
+body {
+  background-size: cover;
+  background-image: url(bglight.jpg);
+  background-repeat: repeat-y;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 84px;
+  padding: 0px 20px;
+  background-color: white;
+  box-shadow: -1.4px -1.4px 6px 0 #97a2a0;
+}
+.navbar_site_name {
+  font-size: 30px;
+}
+.navbar_list {
+  list-style: none;
+  display: flex;
+  font-size: 16px;
+}
+.navbar_list li {
+  margin-left: 12px;
+  padding: 8px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.navbar_list a {
+  color: black;
+  text-decoration: none;
+}
+.navbar_list li:hover {
+  transform: rotate(-5deg);
+  background-color: #fa0;
+}
+
+#fortnite {
+  text-align: center;
+}
+.wrapper {
+  width: 960px;
+  display: inline-block;
+}
+.fortnite_title {
+  font-size: 36px;
+  font-weight: 700;
+  margin: 20px;
+  color: #fa0;
+}
+.fortnite_des {
+  font-size: 24px;
+  margin: 20px;
+  font-weight: 600;
+  color: #666;
+}
+
+.fortnite_games {
+  display: flex;
+  flex-wrap: wrap;
+  transition: 0.2s;
+}
+
+.fortnite_games a {
+  text-decoration: none;
+  color: #666;
+}
+
+.game:hover {
+  transform: scale(1.05);
+  opacity: 1;
+}
+
+.game {
+  opacity: 0.9;
+  width: 300px;
+  padding: 0;
+  margin: 8px;
+  position: relative;
+  background: white;
+  border: solid  1px #c1c1c1;
+  box-shadow: -1.4px -1.4px 6px 0 #97a2a0;
+}
+.game img {
+  width: 100%;
+}
+
+.game_bottom {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.game_bottom_left img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: solid 1px #c1c1c1;
+}
+.game_bottom_right {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: start;
+  margin: 10px;  
+}
+
+.game_channel {
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: auto;
+  }
+  .navbar_list {
+    padding: 0;
+  }
+  .wrapper {
+    width: auto;
+    display: inline-block;
+  }
+  .fortnite_games {
+    display: flex;
+    justify-content: center;
+    transition: 0.2s;
+  }
+  .navbar_list li:hover {
+    transform: none;
+    background-color: #fa0;
+  }
+}

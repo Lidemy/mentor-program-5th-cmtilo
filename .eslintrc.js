@@ -3,12 +3,14 @@ module.exports = {
     browser: true,
     es6: true,
     node: true,
-    jest: true
+    jest: true,
+    jquery: true
   },
   extends: '@lidemy/eslint-config-lidemy',
   globals: {
     Atomics: 'readonly',
-    SharedArrayBuffer: 'readonly'
+    SharedArrayBuffer: 'readonly',
+    jQuery: 'readonly'
   },
   parserOptions: {
     ecmaFeatures: {
@@ -18,5 +20,12 @@ module.exports = {
   },
   rules: {
     'no-console': 'off'
+  },
+  settings: {
+    'import/resolver': {
+      webpack: {
+        config: '../webpack-demo/webpack.config.js'
+      }
+    }
   }
 }

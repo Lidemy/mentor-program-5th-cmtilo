@@ -33,6 +33,7 @@
     "example": "examples"
   },
   "dependencies": {
+    "jquery": "^3.6.0",
     "request": "^2.88.2"
   }
 }
