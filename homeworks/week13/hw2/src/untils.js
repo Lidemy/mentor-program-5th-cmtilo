@@ -41,8 +41,6 @@ export function doSomethingInComments(commentDOM, siteKey, datas) {
   const comments = datas.discussions
   const totalData = comments.length
   const showDataNum = totalData - beginDataNum
-  console.log(siteKey, datas)
-  console.log(perDataNum, showDataNum)
 
   if (showDataNum <= 0) {
     for (const comment of comments) {

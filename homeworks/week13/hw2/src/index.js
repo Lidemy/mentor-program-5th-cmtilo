@@ -4,7 +4,7 @@ import { appendCommentToDOM, doSomethingInComments } from './untils'
 import getTemplate from './template'
 
 // 初始
-export default function init(options) {
+export function init(options) {
   // const siteKey = options.siteKey
   // const apiUrl = options.apiUrl
   const { siteKey } = options
