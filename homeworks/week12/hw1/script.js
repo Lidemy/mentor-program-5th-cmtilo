@@ -38,7 +38,6 @@ function loadMoreToOrNotToDOM(container, boolean) {
 $(document).ready(() => {
   const beginDataNum = 6
   let perDataNum = 6
-  const siteKey = null
 
   // 串api_comments.php
   $.ajax({
@@ -66,12 +65,12 @@ $(document).ready(() => {
           for (let i = totalData - 1 - perDataNum; i >= totalData - beginDataNum - perDataNum; i--) {
             appendCommentToDOM($('.comments'), comments[i], true)
             if (i <= 0) {
-              loadMoreToOrNotToDOM($(`.${siteKey}-load-more`), siteKey, false) // 移除 loading
+              loadMoreToOrNotToDOM($('.load-more'), false) // 移除 loading
             }
           }
           perDataNum += 6
           if (perDataNum >= totalData - beginDataNum) {
-            loadMoreToOrNotToDOM($('.load-more'), false) // 在load-more 移除 loading 按鈕
+            loadMoreToOrNotToDOM($('.load-more'), false) // 移除 loading 按鈕
           }
         })
       }
