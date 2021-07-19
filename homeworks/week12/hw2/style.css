@@ -1,0 +1,127 @@
+* {
+  margin: 0;
+  font-family: Arial Black, '微軟正黑體';
+}
+
+.wrapper {
+  background-color: #FFFFCC;
+  overflow: hidden;  
+}
+header, .bg {
+  position: relative;  
+}
+
+.orange {
+  width: 300px;
+  height: 300px;
+  color: white;
+  font-size: 45px;
+  background-color: #ED7D31;
+  border-radius: 50%;
+  position: absolute;
+  top: 100px;
+  left: 20%;
+  transform: rotate(-28deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+main {
+  display: flex;
+  justify-content: flex-end;
+  width: 768px;
+  margin: 0 auto;
+}
+.lightblue {
+  width: 350px;
+  min-height: 600px;
+  background-color: #DAE3F3;
+  border-radius: 45px;
+  border: black 1px red;
+  margin: 20px;
+  padding: 20px;
+  z-index: 1;
+}
+form {
+  width: 300px;
+  height: 120px;
+  background-color: white;
+  border-radius: 30px;
+  margin: 15px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.todo {
+  margin: 10px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;  
+}
+input {
+  height: 40px;
+  border-style: none;
+  cursor: pointer;
+}
+.things {
+  word-wrap:break-word;
+  white-space: pre-line;
+  width: 240px;
+}
+.count {
+  text-align: center;
+  color: #666;
+}
+
+.done {
+  text-decoration: line-through;
+}
+
+.bg_one {
+  width: 1000px;
+  height: 1000px;
+  background-color: #FFFFCC;
+  border-radius: 50%;
+  position: absolute;
+  top: -830px;
+  left: -190px;
+}
+.bg_two {
+  width: 900px;
+  height: 900px;
+  background-color: #FFC000;
+  border-radius: 50%;
+  position: absolute;
+  top: -220px;
+  left: 620px;  
+}
+footer {
+  height: 240px;
+  padding: 20px;
+  display: flex;
+  align-items: flex-end;
+  color: white;
+  background-color: #FFC000;
+}
+
+
+@media(max-width: 768px) {
+  main {
+    display: flex;
+    justify-content: center;
+    width: auto;
+  }
+  .lightblue {
+    max-width: 270px;
+  }
+  form {
+    width: auto;
+  }
+  input {
+    max-width: 160px;
+  }
+  .things {
+    max-width: 100px;
+  }
+}
