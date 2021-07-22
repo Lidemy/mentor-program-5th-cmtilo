@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>留言板API</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src='https://code.jquery.com/jquery-3.6.0.js'></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+  <main class="container">
+    <br/>
+    <h2 style="text-align: center">留言板API練習</h2>
+    <br/>
+    <session class="card">      
+      <form class="add-comment-form card-body" method="POST">
+        <div class="mb-3 ">
+          <label for="formNickname" class="form-label">您的暱稱</label>
+          <input name="nickname" type="text" class="form-control" id="formNickname">
+        </div>
+        <div class="mb-3">
+          <label for="formTextarea" class="form-label">留言內容</label>
+          <textarea name="content" class="form-control" id="formTextarea" rows="3"></textarea>
+        </div>
+        <div style="text-align: right">
+          <button type="submit" class="btn btn-warning btn-lg">確認送出</button>
+        </div>        
+      </form>      
+    </session>
+    <div class="progress">
+      <div class="progress-bar bg-warning" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    <br/>    
+    <div class="comments row row-cols-1 row-cols-md-2 g-4">
+      
+    </div>
+    <br/>
+    <div class="text-center load-more">
+
+    </div>
+    <br/> 
+  </main>
+</body>
+<script type='text/javascript' src='script.js'></script>
+</html>
